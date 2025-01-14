@@ -1,0 +1,370 @@
+/* Імпортуємо шрифт Montserrat із Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap');
+
+/* Скидаємо стандартні відступи та поля для всіх елементів */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Стилі для тіла сторінки */
+body {
+  background: #fff; /* Білий фон */
+  color: #222; /* Темно-сірий колір тексту */
+  font-family: 'Montserrat', sans-serif; /* Шрифт Montserrat */
+  font-weight: 300; /* Легкий шрифт */
+}
+
+/* Загальний контейнер для всього контенту */
+.wrapper {
+  max-width: 1280px; /* Максимальна ширина контейнера */
+  width: 100%; /* Ширина 100% від доступного простору */
+  margin: 50px auto; /* Центрування контейнера з відступом знизу і зверху */
+}
+
+/* Стилі для header */
+header {
+  position: relative; /* Відносне позиціювання для абсолютних елементів всередині */
+}
+
+/* Логотип в header */
+header .logo {
+  font-weight: 600; /* Жирний шрифт */
+  font-size: 20px; /* Розмір шрифту */
+}
+
+/* Навігаційне меню */
+header ul.nav {
+  float: right; /* Плаваюче праворуч */
+  list-style: none; /* Без маркерів */
+}
+
+/* Стилі для пунктів меню */
+header ul.nav li {
+  display: inline; /* Виведення пунктів в ряд */
+  margin-left: 25px; /* Відступ між пунктами */
+  cursor: pointer; /* Курсор у вигляді руки */
+  transition: opacity 500ms ease; /* Плавна зміна прозорості */
+}
+
+/* Підсвітка при наведенні на пункти меню */
+header ul.nav li:hover {
+  opacity: 0.5; /* Зменшення прозорості */
+}
+
+/* Кнопка кошика */
+header .shop-cart-button {
+  float: right; /* Плаває праворуч */
+  cursor: pointer; /* Курсор у вигляді руки */
+  transition: color 500ms ease; /* Плавна зміна кольору */
+}
+
+/* Підсвітка кнопки кошика при наведенні або активному стані */
+header .shop-cart-button:hover,
+header .shop-cart-button.active {
+  color: #dc3d3d; /* Червоний колір */
+  transform: scale(1.5); /* Збільшення розміру */
+}
+
+/* Стилі для кошика */
+header .shop-cart {
+  position: absolute; /* Абсолютне позиціювання відносно батьківського елемента */
+  top: 30px; /* Відступ зверху */
+  right: 0; /* Відступ праворуч */
+  width: 450px; /* Ширина */
+  background: #fafafa; /* Світло-сірий фон */
+  -webkit-box-shadow: 4px 5px 15px -7px #606060; /* Тінь для старих браузерів */
+  box-shadow: 4px 5px 15px -7px #606060; /* Тінь */
+  z-index: 1000; /* Забезпечує, що кошик буде над іншими елементами */
+  padding: 20px; /* Внутрішній відступ */
+  padding-bottom: 0; /* Видаляємо нижній відступ */
+}
+
+/* Стилі для порожнього кошика */
+header .shop-cart .empty h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Стилі для товарів у кошику */
+header .shop-cart .item {
+  width: 100%; /* Ширина 100% */
+  float: left; /* Плаває ліворуч */
+  margin-bottom: 20px; /* Відступ знизу */
+}
+
+/* Стилі для зображення товару в кошику */
+header .shop-cart .item img {
+  width: 70px; /* Ширина зображення */
+  float: left; /* Плаває ліворуч */
+  margin-top: 20px; /* Відступ зверху */
+}
+
+/* Стилі для назви товару в кошику */
+header .shop-cart .item h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+/* Стилі для опису товару в кошику */
+header .shop-cart .item p {
+  color: #797979; /* Сірий колір тексту */
+  font-weight: 600; /* Жирний шрифт */
+}
+
+header .shop-cart .item .delete-icon {
+  color: #ca5252;
+  float: right;
+  position: relative;
+  top: -25px;
+  cursor: pointer;
+  transition: color, transform 500ms ease;
+}
+
+header .shop-cart .item .delete-icon:hover {
+  color: #d83030;
+  transform: scale(1.5);
+}
+
+header .shop-cart .suma {
+  float: left;
+  width: 100%;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+/* Стилі для кнопки "Зареєструватися" */
+header ul.nav li button {
+  padding: 10px 18px; /* Зменшуємо відступи з боків і зверху/знизу */
+  background-color: #5fa36a; /* Основний зелений колір */
+  color: white; /* Білий колір тексту */
+  border: none; /* Без бордеру */
+  border-radius: 5px; /* Скруглені кути */
+  font-size: 14px; /* Зменшуємо розмір шрифту */
+  font-weight: 600; /* Жирний шрифт */
+  cursor: pointer; /* Курсор у вигляді руки */
+  /*text-transform: uppercase; /* Перетворення на великі літери */
+  transition: background-color 300ms ease, transform 200ms ease; /* Анімація змін фону та масштабування */
+}
+
+/* Ефект при наведенні на кнопку */
+header ul.nav li button:hover {
+  background-color: #4b8c58; /* Змінюємо колір на темніший при наведенні */
+  transform: scale(1.03); /* Легке зменшене збільшення кнопки */
+}
+
+/* Фокусування на кнопці */
+header ul.nav li button:focus {
+  outline: none; /* Прибираємо обводку при фокусуванні */
+  box-shadow: 0 0 0 2px rgba(95, 163, 106, 0.7); /* Легка тінь навколо кнопки */
+}
+
+
+/* Додаткові ефекти для кнопки */
+header ul.nav li button {
+  position: relative; /* Для додавання тіні */
+  overflow: hidden; /* Приховуємо ефекти, що виходять за межі */
+}
+
+/* Підсвітка кнопки при наведенні */
+header ul.nav li button:hover::after {
+  content: ''; /* Псевдоелемент для анімації */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(95, 163, 106, 0.3); /* Напівпрозора тінь */
+  transform: scale(1.2); /* Збільшуємо розмір тіні */
+  animation: shadowPulse 0.6s ease-in-out infinite; /* Анімація пульсації */
+}
+
+/* Анімація пульсації */
+@keyframes shadowPulse {
+  0% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0.3;
+  }
+}
+
+/* Стилі для презентаційного банера */
+header .presentation {
+  margin: 50px 0; /* Відступи зверху і знизу */
+  background: url('./img/bg.jpeg') no-repeat; /* Фон із зображенням */
+  width: 100%; /* Ширина 100% */
+  height: 500px; /* Висота */
+  background-size: cover; /* Покриває весь простір */
+  background-position: center center; /* Центрування фону */
+  background-blend-mode: multiply; /* Режим накладення кольорів */
+  background-color: #bcbcbc; /* Колір фону */
+  position: relative; /* Відносне позиціювання для псевдоелементів */
+}
+
+/* Текст на банері */
+header .presentation::after {
+  content: 'Оригінальні автотовари'; /* Текст */
+  position: absolute; /* Абсолютне позиціювання */
+  top: 100px; /* Відступ зверху */
+  left: 50px; /* Відступ ліворуч */
+  width: 300px; /* Ширина */
+  font-size: 40px; /* Розмір шрифту */
+  font-weight: 600; /* Жирний шрифт */
+  color: #fff; /* Білий колір тексту */
+}
+
+/* Текст під заголовком на банері */
+header .presentation::before {
+  content: 'Найнижча ціна'; /* Текст */
+  position: absolute; /* Абсолютне позиціювання */
+  top: 250px; /* Відступ зверху */
+  left: 50px; /* Відступ ліворуч */
+  width: 300px; /* Ширина */
+  font-size: 15px; /* Розмір шрифту */
+  font-weight: 300; /* Легкий шрифт */
+  color: #fff; /* Білий колір тексту */
+}
+
+.categories div {
+  display: inline-block;
+  background: #f2f2f2;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin-bottom: 25px;
+  margin-right: 15px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transform: all 500ms ease;
+}
+
+
+.categories div:hover {
+  border-color: silver;
+  transform: scale(1.1);
+}
+
+.full-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.full-item > div {
+  width: 15cm; /* Точна ширина 15 см */
+  height: 15cm; /* Точна висота 15 см */
+  position: relative;
+  padding: 20px;
+  background: #fff;
+  border-radius: 9px;
+  overflow: hidden; /* Залишаємо прокручування, якщо потрібно */
+}
+
+
+/* Основний контейнер для товарів */
+main {
+  display: flex; /* Використовуємо флекс-контейнер */
+  width: 100%; /* Ширина 100% */
+  flex-wrap: wrap; /* Товари будуть переноситися на нові рядки */
+  justify-content: space-between; /* Простір між елементами */
+}
+
+
+/* Стилі для кожного товару */
+main .item {
+  width: 30%; /* Ширина 30% */
+  margin-bottom: 50px; /* Відступ знизу */
+  background: #f5f5f5; /* Світло-сірий фон */
+  overflow: hidden; /* Приховуємо вміст, що виходить за межі */
+  position: relative; /* Відносне позиціювання для додаткових елементів */
+  padding-bottom: 20px; /* Відступ знизу */
+}
+
+/* Стилі для зображень товарів */
+main .item img, .full-item img {
+  width: 100%; /* Ширина 100% */
+  border-radius: 10px 10px; /* Скруглені кути */
+  transition: transform 500ms ease; /* Плавна трансформація */
+  cursor: pointer;
+}
+
+/* Ефект при наведенні на зображення */
+main .item img:hover, .full-item img:hover {
+  transform: scale(1.05); /* Легке збільшення при наведенні */
+}
+
+/* Стилі для тексту в кожному товарі */
+main h2, .full-item h2,
+main p, .full-item p,
+main b, .full-item b {
+  margin: 10px 20px; /* Відступи з боків */
+  color: #333; /* Темно-сірий колір */
+}
+
+/* Стилі для ціни товару */
+main b, .full-item b {
+  color: #5fa36a; /* Зелений колір для ціни */
+}
+
+/* Кнопка додавання в кошик */
+main .add-to-cart,
+.full-item .add-to-cart  {
+  position: absolute; /* Абсолютне позиціювання */
+  right: 20px; /* Відступ праворуч */
+  bottom: 20px; /* Відступ знизу */
+  background: #ca5252; /* Червоний фон */
+  width: 35px; /* Ширина */
+  height: 35px; /* Висота */
+  text-align: center; /* Центрування тексту */
+  line-height: 35px; /* Центрування тексту по вертикалі */
+  color: #fff; /* Білий колір тексту */
+  border-radius: 50%; /* Кругла кнопка */
+  cursor: pointer; /* Курсор у вигляді руки */
+  font-weight: 600; /* Жирний шрифт */
+  transition: transform 500ms ease; /* Плавна трансформація */
+}
+
+/* Ефект при наведенні на кнопку */
+main .add-to-cart:hover,
+.full-item .add-to-cart-:hover {
+  transform: scale(1.5) translateY(-5px); /* Збільшення кнопки з підйомом */
+}
+
+/* Стилі для футера */
+footer {
+  text-align: center; /* Центрування тексту */
+  margin-top: 100px; /* Відступ зверху */
+}
+
+
+.error {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+/* Шрифт та глобальні стилі:
+Використовуємо шрифт Montserrat для всіх елементів, скидаємо стандартні відступи та поля.
+Основні компоненти:
+Header: містить логотип, навігаційне меню, кнопку кошика і сам кошик.
+Main: контейнери для товарів. Використовуються флекс-контейнери для розташування елементів в ряд.
+Footer: футер з центруванням тексту.
+Ефекти:
+Використовуються плавні переходи для змін кольорів, масштабування та переміщення елементів (наприклад, на кнопках та зображеннях товарів).
+Це основні стилі для вашої сторінки з товарами, кошиком та іншими елементами інтерфейсу. */
